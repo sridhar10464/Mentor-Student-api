@@ -10,7 +10,7 @@ import axios from "axios";
      const handleSubmit = async e => {
          e.preventDefault();
          try {
-             await axios.post("http://localhost:8000/api/mentor/add-mentor", { name, expertise });
+             await axios.post("https://mentor-student-api-3fz7.onrender.com/api/mentor/add-mentor", { name, expertise });
              setMessage("Mentor created successfully");
              setName("");
              setExpertise("");
