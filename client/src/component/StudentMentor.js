@@ -9,7 +9,7 @@ function StudentMentor() {
 
   useEffect(() => {
     // Fetch students from database
-    axios.get("http://localhost:8000/api/student/students-list").then((response) => {
+    axios.get("https://mentor-student-api-3fz7.onrender.com/api/student/students-list").then((response) => {
       setStudents(response.data);
     });
   }, []);
@@ -19,7 +19,7 @@ function StudentMentor() {
     setSelectedStudent(studentId);
 
     // Fetch previously assigned mentor for the selected student
-    axios.get(`http://localhost:8000/api/student/${studentId}/mentor`).then((response) => {
+    axios.get(`https://mentor-student-api-3fz7.onrender.com/api/student/${studentId}/mentor`).then((response) => {
       setMentor(response.data.name);
     });
   };
