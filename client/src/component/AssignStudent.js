@@ -12,14 +12,14 @@ function AssignStudent() {
 
   useEffect(() => {
     // Fetch all mentors and students from backend API
-    axios.get('http://localhost:8000/api/mentor/mentors-list')
+    axios.get('https://mentor-student-api-3fz7.onrender.com/api/mentor/mentors-list')
       .then((response) => {
         setMentors(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-    axios.get('http://localhost:8000/api/student/students-list')
+    axios.get('https://mentor-student-api-3fz7.onrender.com/api/student/students-list')
       .then((response) => {
         // Filter out students who already have a mentor assigned
         const unassignedStudents = response.data.filter((student) => !student.mentor);
@@ -57,7 +57,7 @@ function AssignStudent() {
       students: selectedStudents
         };
     //    axios.post( `http://localhost:8000/api/mentor/${selectedMentor}/assign-students`, data)
-    axios.post(`http://localhost:8000/api/mentor/${selectedMentor}/assign-students`, data)
+    axios.post(`https://mentor-student-api-3fz7.onrender.com/api/mentor/${selectedMentor}/assign-students`, data)
       .then((response) => {
         console.log(response.data);
         setMessage("Mentor created successfully");
