@@ -10,11 +10,11 @@ const AssignMentor = () => {
   // Fetch mentors and students data from API
   useEffect(() => {
     const fetchMentors = async () => {
-      const res = await axios.get("http://localhost:8000/api/mentor/mentors-list");
+      const res = await axios.get("https://mentor-student-api-3fz7.onrender.com/api/mentor/mentors-list");
       setMentors(res.data);
     };
     const fetchStudents = async () => {
-      const res = await axios.get("http://localhost:8000/api/student/students-list");
+      const res = await axios.get("https://mentor-student-api-3fz7.onrender.com/api/student/students-list");
       setStudents(res.data);
     };
     fetchMentors();
@@ -25,7 +25,7 @@ const AssignMentor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.gets(`http://localhost:8000/api/student/${selectedStudent}/mentor`, {
+      const res = await axios.gets(`https://mentor-student-api-3fz7.onrender.com/api/student/${selectedStudent}/mentor`, {
         mentor: selectedMentor,
       });
       alert("Mentor assigned successfully!");
