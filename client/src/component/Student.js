@@ -14,7 +14,7 @@ function CreateStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { name, age, email, dept, phone };
-    axios.post('http://localhost:8000/api/student/add-student', data)
+    axios.post('https://mentor-student-api-3fz7.onrender.com/api/student/add-student', data)
       .then((response) => {
         console.log(response.data);
         setName('');
